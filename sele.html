@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Nota Selectividadd</title>
+  <meta name="description" content="Nota selectividad">
+  <style>
+    body {
+        display: grid;
+        justify-content: center;
+        font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+   <label>Media Bachillerato</label>
+        <input type="number" /><br/>
+   <label>ABAU Fase General</label>
+        <input type="number" /><br/>
+   <label>Optativa 1</label>
+        <input type="number" /><br/>
+   <label>Optativa 2</label>
+        <input type="number" /><br/>
+   <button type="submit" onClick="calculate()">CALCULAR</button>
+   <br/>
+   <div class="resultado"></div>
+
+  <script>
+    function calculate(){
+        let media_bachiller = document.getElementsByTagName("INPUT")[0]
+        let abau_general = document.getElementsByTagName("INPUT")[1]
+        let optativa1 = document.getElementsByTagName("INPUT")[2]
+        let optativa2 = document.getElementsByTagName("INPUT")[3]
+        let resultado = document.getElementsByClassName("resultado")[0]
+
+        console.log(media_bachiller.value)
+        let formula = (0.6 * media_bachiller.value) + (0.4 * abau_general.value) + (optativa1.value * 0.2) + (optativa2.value * 0.2)
+        if(formula <= 14){
+            resultado.style.color = "black"
+            resultado.innerHTML = formula
+        } 
+        else {
+            resultado.style.color = "red"
+            resultado.innerHTML = "Error. Inténtelo de nuevo."
+        }
+    }
+  </script>
+</body>
+</html>
