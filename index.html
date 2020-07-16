@@ -38,6 +38,8 @@
         <br/>
         <div class="resultado"></div>
    </div>
+   <br/><br/><br/><br/><br/><br/>
+   <p>PD: Si os mola Animal Crossing echadle un vistazo a <a href="https://animalbrowsing.com">Animal Browsing</a> 🐈 <3</p>
 
   <script>
     function calculate(){
@@ -49,7 +51,7 @@
 
         console.log(media_bachiller.value)
         let formula = (0.6 * media_bachiller.value) + (0.4 * abau_general.value) + (optativa1.value * 0.2) + (optativa2.value * 0.2)
-        if(formula <= 14){
+        if(formula <= 14 && formula > 0){
             resultado.style.color = "black"
             resultado.innerHTML = formula
         } 
